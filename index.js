@@ -15,8 +15,8 @@ mongoose.connect(process.env.MONGO_URI)
       price: 49.99,
       category: electronics._id,
     });
-    const populatedProduct = await Product.findById(testProduct._id).populate('category');
-    console.log('Populated product:', populatedProduct);
+  const populatedProduct = await Product.findById(testProduct._id).populate('category');
+  console.log('Populated product:', populatedProduct);
   })
   .catch((err) => console.error('MongoDB connection error:', err));
 
