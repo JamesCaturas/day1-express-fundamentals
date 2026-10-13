@@ -5,8 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const authRouter = require('./routes/auth');
-app.use('/api/v1/auth', authRouter);
+
 
 // 1. Global Middleware
 app.use(express.json());
@@ -36,3 +35,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => {
     console.error('MongoDB connection error:', err);
   });
+
+const authRouter = require('./routes/auth');
+app.use('/api/v1/auth', authRouter);

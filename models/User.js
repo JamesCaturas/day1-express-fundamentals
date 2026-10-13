@@ -6,11 +6,11 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['trainee', 'admin'], default: 'trainee' },
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema);
-
 userSchema.set('toJSON', {
   transform: (doc, ret) => {
     delete ret.password;
     return ret;
   },
 });
+
+module.exports = mongoose.model('User', userSchema);
