@@ -1,4 +1,28 @@
+require('dotenv').config(); 
 const express = require('express');
+const mongoose = require('mongoose');
+
+// MODELS
+
+const Product = require('./models/Product');
+const Category = require('./models/Category');
+mongoose.connect(process.env.MONGO_URI)
+  .then(async () => {
+    // ...inside the .then() after mongoose.connect():
+    const electronics = await Category.create({ name: 'Electronics' });
+    const testProduct = await Product.create({
+      name: 'Test Keyboard',
+      price: 49.99,
+      category: electronics._id,
+    });
+    const populatedProduct = await Product.findById(testProduct._id).populate('category');
+    console.log('Populated product:', populatedProduct);
+  })
+  .catch((err) => console.error('MongoDB connection error:', err));
+
+
+
+
 const app = express();
 
 app.use(express.json());
