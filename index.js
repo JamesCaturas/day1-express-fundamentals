@@ -30,6 +30,12 @@ mongoose.connect(process.env.MONGO_URI)
     
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);
+      if (require.main === module) {
+        app.listen(process.env.PORT || 3000, () => {
+          console.log(`Server is running on http://localhost:${process.env.PORT || 3000}`);
+        });
+      }
+      module.exports = app;
     });
   })
   .catch((err) => {
@@ -38,3 +44,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 const authRouter = require('./routes/auth');
 app.use('/api/v1/auth', authRouter);
+const tasksRouter = require('./routes/tasks');
+app.use('/api/v1/tasks', tasksRouter);
+
+app.use('/api/v1/uploads', require('./routes/uploads'));
+app.use('/uploads', express.static('uploads'));
+app.use(require('./middleware/errorHandler'));

@@ -25,4 +25,13 @@ router.delete('/:id', deleteTask);
 // 3. Admin-only force delete route (permanently wipes task from database)
 router.delete('/:id/force', authorize('admin'), forceDeleteTask);
 
+const { param } = require('express-validator');
+const validate = require('../middleware/validate');
+
+const idParamValidation = [param('id').isMongoId().withMessage('Invalid id format')];
+
+router.get('/:id', idParamValidation, validate, getTaskById);
+router.put('/:id', idParamValidation, validate, updateTask);
+router.delete('/:id', idParamValidation, validate, deleteTask);
+
 module.exports = router;

@@ -89,3 +89,4 @@ exports.logout = async (req, res) => {
   await user.save();
   res.status(204).send();
 };
+
