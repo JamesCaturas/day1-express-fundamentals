@@ -1,0 +1,8 @@
+{"_e":"root:init","_t":1792043423200,"format":"v0-jsonl","version":"57.0.30"}
+{"_e":"env:mode","_t":1792043423200,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1792043423202,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"http://localhost:3000/api/v1","JWT_SECRET":"<3bd974fe64edbecf54e92109e7f9604171193e37f3cfc32c6ed1aa6131752dbd44cffc1d5ed8fcd77cfcbef0f97e094c210c9b2296bc57fd155d8271c1e498d2","MONGO_URI":"mongodb+srv://jamescaturas_db_user:YcV6TtCKmDcZ5mCK@day1cluster.2u44kqm.mongodb.net/","REFRESH_TOKEN_SECRET":"d20104b85015bf36767db9a4d899ae3a5d5ce5ed486b204c0cd6068a35ebe2cedd8adb00fe5542960105fc499bdf559f35ba802cce1c41ffdb535e7ceab192a6"}}
+{"_e":"devserver:start","_t":1792043436284,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1792043436502,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1792043436590,"plugins":[]}
+{"_e":"metro:instantiate","_t":1792043437034,"atlas":false,"workers":6,"host":"::","port":8082}
+{"_e":"metro:client_log","_t":1792043445002,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThe project you requested requires a newer version of Expo Go.\n\nHow to fix this error:\n\nDownload the latest version of Expo Go from the App Store."]}
