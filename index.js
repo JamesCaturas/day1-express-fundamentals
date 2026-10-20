@@ -1,9 +1,11 @@
 require('dotenv').config(); 
+require('./config/env')();
 const express = require('express');
 const mongoose = require('mongoose');
 require('./models/Category');
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 
 
@@ -22,6 +24,14 @@ app.get('/', (req, res) => {
 
 // 3. Mount Module 6 Product CRUD Routes
 const productsRouter = require('./routes/products');
+
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    version: require('./package.json').version,
+    uptime: Math.round(process.uptime()),
+  });
+});
 app.use('/api/v1/products', productsRouter);
 
 // 4. Connect to MongoDB, then start the server

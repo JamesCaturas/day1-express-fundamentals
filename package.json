@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest --forceExit",
-    "dev": "nodemon index.js",
-    "seed": "node scripts/seed.js"
-  },
+"scripts": {
+  "dev": "nodemon index.js",
+  "start": "node index.js",
+  "test": "jest",
+  "seed": "node scripts/seed.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
